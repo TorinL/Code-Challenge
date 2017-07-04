@@ -8,14 +8,12 @@ $('#files').change(getFile)
 
 function getFile(evt) {
 
-  var files = evt.target.files;
-
+  let files = evt.target.files;
   let output = files[0]
-
-  var reader = new FileReader();
+  let reader = new FileReader();
 
   reader.onload = function(e) {
-    $('#render').text(reader.result)
+    $('#render').html(reader.result)
   }
 
   reader.readAsText(event.target.files[0])
